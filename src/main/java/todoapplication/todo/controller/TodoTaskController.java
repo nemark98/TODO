@@ -3,12 +3,8 @@ package todoapplication.todo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import todoapplication.todo.entity.TodoTask;
-import todoapplication.todo.repository.TodoTaskRepository;
 import todoapplication.todo.service.TodoTaskService;
 
 import java.util.List;
@@ -23,6 +19,24 @@ public class TodoTaskController {
 
     @GetMapping("/findByUser/{id}")
     public List<TodoTask> findByUser(@PathVariable("id") int id) {
+        log.info("findByUser started.");
         return todoTaskService.findByUser(id);
+    }
+
+    @PostMapping("todoTask")
+    public TodoTask Create(@RequestBody TodoTask todoTask){
+            return todoTaskService.Create(todoTask);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public void Delete(@PathVariable("id") int id){
+        log.info("Delete todoTask started.");
+        todoTaskService.Delete(id);
+        log.info("Delete todoTask finished.");
+    }
+
+    @PutMapping("/todoTask")
+    public TodoTask Update(@RequestBody TodoTask todoTask) {
+        return todoTaskService.Update(todoTask);
     }
 }

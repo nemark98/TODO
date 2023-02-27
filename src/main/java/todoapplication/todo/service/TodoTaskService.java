@@ -19,25 +19,29 @@ public class TodoTaskService {
     @Autowired
     UserService userService;
 
-    public void Create(TodoTask todoTask) {
+    public TodoTask Create(TodoTask todoTask) {
         try {
-            todoTaskRepository.save(todoTask);
+            todoTask = todoTaskRepository.save(todoTask);
         } catch (Exception exp) {
             log.error("Unsuccesful repository save!");
         }
+        return todoTask;
     }
 
-    public void Update(TodoTask todoTask) {
+    public TodoTask Update(TodoTask todoTask) {
         try {
-            todoTaskRepository.save(todoTask);
+            todoTask = todoTaskRepository.save(todoTask);
+            log.info("Sucessfully ");
         } catch (Exception exp) {
             log.error("Unsuccesful repository update!");
         }
+        return todoTask;
     }
 
-    public void Delete(TodoTask todoTask) {
+    public void Delete(Integer id) {
         try {
-            todoTaskRepository.delete(todoTask);
+            todoTaskRepository.deleteById(id);
+            log.info("Repository deleted!");
         } catch (Exception exp) {
             log.error("Unsuccesful repository delete!");
         }

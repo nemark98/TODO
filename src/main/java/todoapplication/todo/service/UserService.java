@@ -19,25 +19,27 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void Create(User user) {
+    public User Create(User user) {
         try {
-            userRepository.save(user);
+            user = userRepository.save(user);
         } catch (Exception exp) {
             log.error("Unsuccesful repository save!");
         }
+        return user;
     }
 
-    public void Update(User user) {
+    public User Update(User user) {
         try {
-            userRepository.save(user);
+            user = userRepository.save(user);
         } catch (Exception exp) {
             log.error("Unsuccesful repository update!");
         }
+        return user;
     }
 
-    public void Delete(User user) {
+    public void Delete(Integer id) {
         try {
-            userRepository.delete(user);
+            userRepository.deleteById(id);
         } catch (Exception exp) {
             log.error("Unsuccesful repository delete!");
         }
@@ -47,7 +49,7 @@ public class UserService {
         List<User> users = new ArrayList<>();
         try {
             users = StreamSupport.stream(userRepository.findAll().spliterator(), false).collect(Collectors.toList());
-            log.info("Finded all task!");
+            log.info("Finded all users!");
         } catch (Exception exp) {
             log.error("Unsuccesful repository save!");
         }
