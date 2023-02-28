@@ -9,9 +9,11 @@ import todoapplication.todo.service.TodoTaskService;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/v1/todoTask")
 @Slf4j
+@CrossOrigin(origins = "http://localhost:4200")
 public class TodoTaskController {
 
     @Autowired
