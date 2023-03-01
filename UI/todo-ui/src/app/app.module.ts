@@ -7,7 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserModalComponent } from './user/user-modal/user-modal.component';
 import { TodoTaskListComponent } from './todoTask/todo-task-list/todo-task-list.component';
-import { TodoTaskModalComponent } from './todoTask/todo-task-modal/todo-task-modal.component'
+import { TodoTaskModalComponent } from './todoTask/todo-task-modal/todo-task-modal.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from "@angular/material/button";
+import { QuestionModalComponent } from './todoTask/question-modal/question-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -15,13 +22,20 @@ import { TodoTaskModalComponent } from './todoTask/todo-task-modal/todo-task-mod
     UserListComponent,
     UserModalComponent,
     TodoTaskListComponent,
-    TodoTaskModalComponent
+    TodoTaskModalComponent,
+    QuestionModalComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatTableModule,
+        MatFormFieldModule,
+        MatIconModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatDialogModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

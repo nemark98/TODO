@@ -23,16 +23,23 @@ public class UserController {
         return (List<User>) userService.findAll();
     }
 
+    @GetMapping("getUser/{id}")
+    public User getUserById(@PathVariable("id") int id) {
+        log.info("User finding started.");
+        return userService.getById(id);
+    }
+
     @PostMapping("user")
     public User Create(@RequestBody User user){
         return userService.Create(user);
     }
 
     @DeleteMapping("delete/{id}")
-    public void Delete(@PathVariable("id") int id){
+    public boolean Delete(@PathVariable("id") int id){
         log.info("Delete user started.");
-        userService.Delete(id);
+        boolean ret = userService.Delete(id);
         log.info("Delete user finished.");
+        return ret;
     }
     @PutMapping("/user")
     public User Update(@RequestBody User user) {

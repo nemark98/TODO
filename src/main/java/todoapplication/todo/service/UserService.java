@@ -37,12 +37,15 @@ public class UserService {
         return user;
     }
 
-    public void Delete(Integer id) {
+    public boolean Delete(int id) {
+        boolean ret = true;
         try {
             userRepository.deleteById(id);
         } catch (Exception exp) {
+            ret = false;
             log.error("Unsuccesful repository delete!");
         }
+        return ret;
     }
 
     public List<User> findAll() {

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {User} from "./user";
+import {UserService} from "./user.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-ui';
-}
+  }
