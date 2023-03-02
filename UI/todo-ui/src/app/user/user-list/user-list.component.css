@@ -1,0 +1,7 @@
+::ng-deep .red-snackbar {
+  background-color: red;
+}
+
+.button {
+  float: right;
+}

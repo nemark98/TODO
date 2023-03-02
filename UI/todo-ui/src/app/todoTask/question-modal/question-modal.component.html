@@ -1,10 +1,9 @@
 <div id="container">
-<!--  todo: angolra írni mindent-->
-  <div id="header">Törlés megerősítése</div>
+  <div id="header">Confirmation window</div>
   <div id="content">{{title}}</div>
 
   <div id="actions">
-    <button (click)="close(true)">Yes</button>
-    <button (click)="close(false)">No</button>
+    <button class="button" mat-raised-button color="warn" (click)="close(true)">Yes</button>
+    <button class="button" mat-raised-button (click)="close(false)">No</button>
   </div>
 </div>

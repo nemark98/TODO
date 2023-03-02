@@ -15,6 +15,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from "@angular/material/button";
 import { QuestionModalComponent } from './todoTask/question-modal/question-modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { TodoTaskListModalComponent } from './todoTask/todo-task-list-modal/todo-task-list-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,19 +28,25 @@ import {MatDialogModule} from '@angular/material/dialog';
     UserModalComponent,
     TodoTaskListComponent,
     TodoTaskModalComponent,
-    QuestionModalComponent
+    QuestionModalComponent,
+    TodoTaskListModalComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatTableModule,
-        MatFormFieldModule,
-        MatIconModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatDialogModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

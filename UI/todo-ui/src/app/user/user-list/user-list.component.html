@@ -1,35 +1,11 @@
 <h2>User List</h2>
-<!--<table class="table table-striped">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>First Name</th>-->
-<!--    <th>Last Name</th>-->
-<!--    <th>Username</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr *ngFor="let user of users">-->
-<!--    <td>{{user.first_name}}</td>-->
-<!--    <td>{{user.last_name}}</td>-->
-<!--    <td>{{user.username}}</td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
+<h2>
+  <button class="button" mat-raised-button color="accent" (click)="openAddUserModal()">
+    Add User
+  </button>
+</h2>
 
-<!--<div class="demo-button-container">-->
-<!--  <button mat-raised-button (click)="addData()" class="demo-button">-->
-<!--    Add data-->
-<!--  </button>-->
-<!--  <button-->
-<!--    mat-raised-button-->
-<!--    [disabled]="!dataToDisplay.length"-->
-<!--    (click)="removeData()"-->
-<!--    class="demo-button">-->
-<!--    Remove data-->
-<!--  </button>-->
-<!--</div>-->
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+<table mat-table [dataSource]="dataSource" class="user-table">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -64,7 +40,7 @@
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef>Edit</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" (click)="openAddUserModal(element)">
         <mat-icon> edit </mat-icon>
       </button>
     </td>
@@ -84,7 +60,7 @@
   <ng-container matColumnDef="todos">
     <th mat-header-cell *matHeaderCellDef>Show Todos</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button color="accent" (click)="deleteUser(element)">
+      <button mat-icon-button color="accent" (click)="showTaskList(element.id)">
         <mat-icon> more_vert </mat-icon>
       </button>
     </td>

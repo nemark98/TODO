@@ -13,7 +13,7 @@
 
 #container {
   width: 40%;
-  height: 600px;
+  height: 300px;
   box-shadow: 5px 5px 4px rgba(19, 19, 19, 0.2);
   border-radius: 10px;
   background-color: #fff;
@@ -26,7 +26,7 @@
   height: 70px;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  padding-left: 50px;
   padding-right: 30px;
   font-size: 30px;
   font-weight: bold;
@@ -36,14 +36,21 @@
 
 #content {
   flex-grow: 1;
-  padding: 30px;
+  padding: 10px;
   font-size: 18px;
 }
 
 #actions {
   display: flex;
   justify-content: flex-end;
-  height: 50px;
+  height: 65px;
   gap: 20px;
   padding: 20px;
+}
+
+.button {
+  padding: 5px 40px;
+  border: 0px;
+  font-size: 22px;
+  cursor: pointer;
 }
