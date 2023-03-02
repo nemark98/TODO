@@ -1,0 +1,95 @@
+<h2>User List</h2>
+<!--<table class="table table-striped">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>First Name</th>-->
+<!--    <th>Last Name</th>-->
+<!--    <th>Username</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let user of users">-->
+<!--    <td>{{user.first_name}}</td>-->
+<!--    <td>{{user.last_name}}</td>-->
+<!--    <td>{{user.username}}</td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--<div class="demo-button-container">-->
+<!--  <button mat-raised-button (click)="addData()" class="demo-button">-->
+<!--    Add data-->
+<!--  </button>-->
+<!--  <button-->
+<!--    mat-raised-button-->
+<!--    [disabled]="!dataToDisplay.length"-->
+<!--    (click)="removeData()"-->
+<!--    class="demo-button">-->
+<!--    Remove data-->
+<!--  </button>-->
+<!--</div>-->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+  </ng-container>
+
+  <!-- First name Column -->
+  <ng-container matColumnDef="first_name">
+    <th mat-header-cell *matHeaderCellDef>First Name</th>
+    <td mat-cell *matCellDef="let element">{{element.first_name}}</td>
+  </ng-container>
+
+  <!-- Last name Column -->
+  <ng-container matColumnDef="last_name">
+    <th mat-header-cell *matHeaderCellDef>Last Name</th>
+    <td mat-cell *matCellDef="let element">{{element.last_name}}</td>
+  </ng-container>
+
+  <!-- Username Column -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef>Username</th>
+    <td mat-cell *matCellDef="let element">{{element.username}}</td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+  </ng-container>
+
+  <!--Edit button-->
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Edit</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary">
+        <mat-icon> edit </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <!--Delete button-->
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Delete</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="warn" (click)="openQuestionModal(element.id)">
+        <mat-icon> delete </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <!--ShowTodos button-->
+  <ng-container matColumnDef="todos">
+    <th mat-header-cell *matHeaderCellDef>Show Todos</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="accent" (click)="deleteUser(element)">
+        <mat-icon> more_vert </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
