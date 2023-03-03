@@ -98,6 +98,5 @@ export class TodoTaskListComponent {
     })
   }
 
-
   displayedColumns: string[] = ['id', 'title', 'description', 'due_date', 'status', 'edit', 'delete'];
 }

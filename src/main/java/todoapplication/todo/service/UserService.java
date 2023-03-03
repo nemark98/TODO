@@ -3,7 +3,6 @@ package todoapplication.todo.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import todoapplication.todo.entity.TodoTask;
 import todoapplication.todo.entity.User;
 import todoapplication.todo.repository.UserRepository;
 
@@ -16,9 +15,19 @@ import java.util.stream.StreamSupport;
 @Service
 public class UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    //tesztelhetőség miatt Autowired off
+    //@Autowired
+    private final UserRepository userRepository;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    /**
+     * Creates the user in repo
+     * @param user
+     * @return user
+     */
     public User Create(User user) {
         try {
             user = userRepository.save(user);
@@ -28,6 +37,11 @@ public class UserService {
         return user;
     }
 
+    /**
+     * Updates user's properties
+     * @param user
+     * @return user
+     */
     public User Update(User user) {
         try {
             user = userRepository.save(user);
@@ -37,6 +51,11 @@ public class UserService {
         return user;
     }
 
+    /**
+     * Deletes the user from repo by id
+     * @param id
+     * @return ret
+     */
     public boolean Delete(int id) {
         boolean ret = true;
         try {
