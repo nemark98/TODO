@@ -23,6 +23,6 @@ public class User {
     @Lob
     private byte[] photo;
 
-    @OneToMany
-    private Set<TodoTask> TaskSet;
+//    @OneToMany
+//    private Set<TodoTask> TaskSet;
 }

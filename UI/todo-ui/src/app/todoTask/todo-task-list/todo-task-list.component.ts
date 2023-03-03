@@ -70,12 +70,12 @@ export class TodoTaskListComponent {
     })
   }
 
-  openAddTodoTaskModal(todoTask?:TodoTask) {
+  openTodoTaskModal(todoTask?:TodoTask) {
     if(!todoTask){
       todoTask = new TodoTask();
     }
     let dialogRef = this.matDialogModule.open(TodoTaskModalComponent, {
-      data: todoTask
+      data: {todoTask:todoTask, userId:this.userId}
     })
     dialogRef.afterClosed().subscribe(closeResult =>{
       if(closeResult != null) {

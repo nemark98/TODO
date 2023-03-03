@@ -31,10 +31,11 @@ public class TodoTaskController {
     }
 
     @DeleteMapping("delete/{id}")
-    public void Delete(@PathVariable("id") int id){
+    public boolean Delete(@PathVariable("id") int id){
         log.info("Delete todoTask started.");
-        todoTaskService.Delete(id);
+        boolean ret = todoTaskService.Delete(id);
         log.info("Delete todoTask finished.");
+        return ret;
     }
 
     @PutMapping("/todoTask")

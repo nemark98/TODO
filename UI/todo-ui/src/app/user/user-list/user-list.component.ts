@@ -68,7 +68,7 @@ dataSource: any;
     })
   }
 
-  openAddUserModal(user?:User) {
+  openUserModal(user?:User) {
     if(!user){
       user = new User();
     }

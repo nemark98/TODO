@@ -21,6 +21,7 @@ public class TodoTaskService {
 
     public TodoTask Create(TodoTask todoTask) {
         try {
+            todoTask.setUser(userService.getById(todoTask.getUser().getId()));
             todoTask = todoTaskRepository.save(todoTask);
         } catch (Exception exp) {
             log.error("Unsuccesful repository save!");
@@ -38,13 +39,16 @@ public class TodoTaskService {
         return todoTask;
     }
 
-    public void Delete(Integer id) {
+    public boolean Delete(Integer id) {
+        boolean ret = true;
         try {
             todoTaskRepository.deleteById(id);
             log.info("Repository deleted!");
         } catch (Exception exp) {
+            ret = false;
             log.error("Unsuccesful repository delete!");
         }
+        return ret;
     }
 
     public List<TodoTask> findByUser(Integer id) {

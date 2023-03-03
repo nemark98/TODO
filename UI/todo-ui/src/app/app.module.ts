@@ -19,7 +19,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { TodoTaskListModalComponent } from './todoTask/todo-task-list-modal/todo-task-list-modal.component';
+import {TodoTaskListModalComponent} from './todoTask/todo-task-list-modal/todo-task-list-modal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { TodoTaskListModalComponent } from './todoTask/todo-task-list-modal/todo
     MatToolbarModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
