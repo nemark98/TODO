@@ -1,5 +1,6 @@
 //package todoapplication.todo.IntegrationTest;
 //
+//import org.apache.logging.log4j.core.util.Assert;
 //import org.junit.jupiter.api.Assertions;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.web.util.UriComponentsBuilder;
+//import todoapplication.todo.controller.UserController;
 //
 //import java.util.HashMap;
 //import java.util.Map;
@@ -27,9 +29,9 @@
 //
 //    @Test
 //    public void getUserTest() {
-//        String url = "http://localhost:" + port + "getUser/{id}";
+//        String url = "http://localhost:" + port + "/getUser/{id}";
 //        Map<String, String> pathVariable=new HashMap<>();
-//        pathVariable.put("id", "2");
+//        pathVariable.put("id", "6");
 //
 //        HttpEntity<String> entity = new HttpEntity<>(null, null);
 //        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
