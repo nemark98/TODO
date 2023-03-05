@@ -1,5 +1,6 @@
 package todoapplication.todo.ServiceTest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -58,14 +59,4 @@ public class UserServiceTest {
         assertEquals(user.getPassword(), ret.getPassword());
         assertEquals(user.getEmail(), ret.getEmail());
     }
-
-//    @Test
-//    public void updateUser_Test() {
-//        UserService sut = new UserService(userRepository);
-//        User user = new User();
-//        user.setId(20);
-//        user.setFirst_name("John");
-//        user.setLast_name("Doe");
-//    }
-
 }

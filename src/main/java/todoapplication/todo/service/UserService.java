@@ -46,9 +46,9 @@ public class UserService {
     public User Update(User user) {
         try {
             user = userRepository.save(user);
-            log.info("Successful user repo update in repo: {}", user);
+            log.info("Successful user repo update: {}", user);
         } catch (Exception exp) {
-            log.error("Unsuccesful user repo update in repo: {}", user);
+            log.error("Unsuccesful user repo update: {}", user);
         }
         return user;
     }
