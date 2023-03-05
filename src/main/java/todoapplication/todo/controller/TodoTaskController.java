@@ -25,12 +25,12 @@ public class TodoTaskController {
         return todoTaskService.findByUser(id);
     }
 
-    @PostMapping("todoTask")
+    @PostMapping("/todoTask")
     public TodoTask Create(@RequestBody TodoTask todoTask){
             return todoTaskService.Create(todoTask);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean Delete(@PathVariable("id") int id){
         log.info("Delete todoTask started.");
         boolean ret = todoTaskService.Delete(id);

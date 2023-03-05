@@ -39,6 +39,7 @@ export class UserModalComponent {
     })
   }
 
+  // if there is input id then update otherwise create
   submitForm(user:User) {
     if(user.id) {
       this.updateUser(user);

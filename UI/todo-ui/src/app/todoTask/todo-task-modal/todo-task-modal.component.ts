@@ -42,6 +42,7 @@ export class TodoTaskModalComponent {
     })
   }
 
+  // if there is input id then update otherwise create
   submitForm(todoTask:TodoTask) {
     if(todoTask.id) {
       this.updateTodoTask(todoTask);

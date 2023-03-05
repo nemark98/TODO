@@ -24,35 +24,37 @@ public class UserService {
     }
 
     /**
-     * Creates the user in repo
+     * Creates the user in repository
      * @param user
      * @return user
      */
     public User Create(User user) {
         try {
             user = userRepository.save(user);
+            log.info("Successful user creation in repo: {}", user);
         } catch (Exception exp) {
-            log.error("Unsuccesful repository save!");
+            log.error("Unsuccesful user creation in repo: {}", user);
         }
         return user;
     }
 
     /**
-     * Updates user's properties
+     * Updates user's properties in repository
      * @param user
-     * @return user
+     * @return updated user
      */
     public User Update(User user) {
         try {
             user = userRepository.save(user);
+            log.info("Successful user repo update in repo: {}", user);
         } catch (Exception exp) {
-            log.error("Unsuccesful repository update!");
+            log.error("Unsuccesful user repo update in repo: {}", user);
         }
         return user;
     }
 
     /**
-     * Deletes the user from repo by id
+     * Deletes user from repository by ID
      * @param id
      * @return ret
      */
@@ -60,30 +62,41 @@ public class UserService {
         boolean ret = true;
         try {
             userRepository.deleteById(id);
+            log.info("Successful user delete from repo: {}", id);
         } catch (Exception exp) {
             ret = false;
-            log.error("Unsuccesful repository delete!");
+            log.error("Unsuccesful user delete from repo: {}", id);
         }
         return ret;
     }
 
+    /**
+     * Find existing users
+     * @return users list
+     */
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         try {
             users = StreamSupport.stream(userRepository.findAll().spliterator(), false).collect(Collectors.toList());
             log.info("Finded all users!");
         } catch (Exception exp) {
-            log.error("Unsuccesful repository save!");
+            log.error("Didn't find all the users");
         }
         return users;
     }
 
+    /**
+     * Finds user by ID
+     * @param id
+     * @return user
+     */
     public User getById(int id) {
         User user = null;
         try {
             user = userRepository.findById(id).get();
+            log.info("Finded the user: {}", id);
         } catch (Exception exp) {
-            log.error("Can't find the user!");
+            log.error("Didn't find the user: {}", id);
         }
      return user;
     }
