@@ -19,8 +19,7 @@
  |		       - Unit Test                                                             |
  |                                                                                             |
  |Amennyiben mégis probléma merülne fel a programmal kapcsolatban, kérem keressen bizalommal.  |
- |Elérhetőségeim:                                                                              |
- |Telefon: +36205902298                                                                        |
+ |Elérhetőségeim:                                                                              |                                                                      
  |E-mail: nemark98@gmail.com                                                                   |
  |                                                                                             |
  |(A leírás szegélyei notepad+++ban és  jegyzettömbben eltérnek, így utóbbiban sajnos          |
