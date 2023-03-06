@@ -15,8 +15,8 @@
  |Elvégzett feladatok: - Adatmodell elkészítése                                                |
  |                     - Backend elkészítése                                                   |
  |                     - REST servicek elkészítése (CRUD - Create, Read, Update, Delete)       |
- |		              - UI elkészítése                                                        |
- |		              - Unit Test                                                             |
+ |		          - UI elkészítése                                                        |
+ |		          - Unit Test                                                             |
  |                                                                                             |
  |Amennyiben mégis probléma merülne fel a programmal kapcsolatban, kérem keressen bizalommal.  |
  |Elérhetőségeim:                                                                              |
